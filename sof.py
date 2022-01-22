@@ -7,6 +7,10 @@ def printGame():
 #this will take in and return GameState
 def game(gameState):
     while gameState.turn():
+        if gameState.checkPass():
+            print("You have completed your journey, would you like continue (c) or pass (p)?")
+            gameState.continueGame(input().lower() == 'c')
+            continue
         while True:
             if gameState.noCardsInPlay():
                 printMainChoices()
@@ -20,12 +24,10 @@ def game(gameState):
                 for Card in gameState.inPlay():
                     print(Card)
             elif(choice == 'quit'):
-                break
+                gameState.quitGame()
+                return gameState
             else:
                 print("Invalid Choice")
-
-        if(choice == 'quit'):
-            break
 
         newCard = gameState.getCard()
         print(newCard);
@@ -41,6 +43,8 @@ def game(gameState):
         
         if (drinks := gameState.owedDrinks()) > 0:
             print(str(drinks) + " drinks bitch!")
+    
+    return gameState
 
  
 
@@ -58,15 +62,8 @@ def printAllChoices(card):
     print("Smoke (s) or Fire (f), Higher (h) or Lower (l), Same Card (sc)")
 
 def checkInput(choice):
-    if(choice == "s"):
-        return True
-    elif(choice == "f"):
-        return True
-    elif(choice == "h"):
-        return True
-    elif(choice == "l"):
-        return True
-    elif(choice == "sc"):
-        return True
-    else:
-        return False
+    return( choice == "s" or
+            choice == "f" or
+            choice == "h" or
+            choice == "l" or
+            choice == "sc" )

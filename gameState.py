@@ -9,7 +9,14 @@ class GameState:
         self.passed = False
         self.continued = False
         self.deck.shuffle()
+        self.quit = False
     
+    def quitGame(self):
+        self.quit = True
+
+    def checkQuit(self):
+        return self.quit
+
     def getDrinks(self):
         return self.drinks
     
@@ -90,4 +97,10 @@ class GameState:
     def newTurn(self):
         self.guesses = 4
         self.passed = False
+    
+    def checkPass(self):
+        self.passed = self.guesses <= 0
+        return self.passed
 
+    def continueGame(self, continued):
+        self.continued = continued

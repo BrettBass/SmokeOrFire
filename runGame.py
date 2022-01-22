@@ -5,4 +5,5 @@ gs = gameState.GameState()
 
 sof.printGame()
 
-sof.game(gs)
+while(gs.checkQuit()):
+    sof.game(gs)
