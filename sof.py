@@ -14,48 +14,10 @@
 # if a player can choose to continue playing instead of passing, at this point they can as long as the amount of cards in play are 4 or greater they can pass at any time.
 # if the deck runs out of cards it will reshuffle without the cards that are currently in play.
 
-
-# This is the main game loop, it will run until a player passes or the player types QUIT 
-
 def printGame():
     print("Welcome to Smoke or Fire")
     print("Type QUIT during your turn to end the game")
     print("If you ever want to show current cards in play type \"show\"")
-
-# this game loop will 
-
-#this will take in and return GameState
-# def game(GameState):
-#     if(GameState.checkNewGame()):
-#         printGame()
-#     else:
-#         print("Last Card: played was " + GameState.currentCard())
-    
-#     while(GameState.turn()):
-#         if GameState.checkNewGame() or 
-#         currCard = GameState.getCard()
-
-#         if(GameState.getPassed()):
-#             print("Would you like to continue playing? (Y/N)")
-#             if(input() == "Y"):
-#                 GameState.setContinued(True)
-#             else:
-#                 GameState.setContinued(False)
-#                 break
-        
-
-#         while True:
-#             printChoices()
-#             input = input().lower()
-#             if(checkInput(input)):
-#                 break
-
-#             elif(input == "show"):
-#                 for Card in GameState.inPlay():
-#                     print(Card)
-#             else:
-#                 print("Invalid Choice")
-
 
 #this will take in and return GameState
 def game(gameState):

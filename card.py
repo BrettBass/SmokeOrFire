@@ -1,7 +1,3 @@
-#card class used to identify playing cards
-#
-#
-
 class Card:
     def __init__(self, suit, value):
         self.suit = suit
